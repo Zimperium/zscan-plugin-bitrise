@@ -9,7 +9,7 @@ For more information on zScan, please see [Continuous Mobile Application Securit
 ## Prerequisites
 
 1. Zimperium [MAPS](https://www.zimperium.com/mobile-app-protection/) license that includes zScan functionality.
-2. API credentials with permissions to upload binaries
+2. API credentials with permissions to upload binaries. In your console, head over to the *Authorizations* tab in the *Account Management* section and generate a new API key that at least has the permissions of `zScan Builds - Upload` and `zScan Assessments - View`.  
 3. A valid application binary (.ipa, .apk, etc.), either built by the current pipeline or otherwise accessible by the plugin.
 
 ## Parameters
@@ -18,13 +18,11 @@ For more information on zScan, please see [Continuous Mobile Application Securit
 
 These parameters are mandatory, unless a default value is available as described below.
 
-- **Endpoint**: console base URL, e.g., `https://ziap.zimperium.com/`
+- **Endpoint**: Zimperium console base URL, e.g., `https://ziap.zimperium.com/`. If your console is hosted on VPC or on-premises, please make sure it is accessible from Bitrise. 
 - **Client ID** and **Client Secret**: API credentials that can be obtained from the console. You are required to use a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client Secret part. We recommend using a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client ID part as well.
 - **File Path**: the path to the binary, either absolute or relative to the current workspace
 - **Report Format**: the format of the scan report, either 'json' (default) or 'sarif'
-- **Team Name**: name of the team to which this application belongs.  This is required only if submitting the application for the first time; values are ignored if the application already exists in the console and assigned to a team.  If not supplied, the application will be assigned to the 'Default' team.
-
-### Optional
+- **Team Name**: name of the team to which this application belongs.  This is required only if submitting the application for the first time; values are ignored if the application already exists in the console and assigned to a team.  If not supplied, the application will be assigned to the 'Default' team.  **Note:** The API key must have additional permissions to be able to manage team assignment: `Common - Teams - Manage` and `zScan Apps - Manage`.
 
 At this time, there are no optional parameters that can be specified in the step configuration.
 
