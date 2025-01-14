@@ -72,10 +72,9 @@ inputs:
       title: "Endpoint"
       summary: Console base URL.
       description: |
-        This is the base URL of your console, e.g., `https://ziap.zimperium.com`..
+        This is the base URL of your console, e.g., `https://ziap.zimperium.com`.
       is_expand: true
       is_required: true
-      value_options: []
   
   - client_id:
     opts:
@@ -85,7 +84,6 @@ inputs:
         Client ID part of the API Key created through the Authorization tab of your console.
       is_expand: true
       is_required: true
-      value_options: []
 
   - client_secret:
     opts:
@@ -107,6 +105,19 @@ inputs:
       is_expand: true
       is_required: true
 
+  - wait_for_report: "true"
+    opts:
+      title: "Wait for Report"
+      summary: "Set to true to wait for an assessment report"
+      description: |
+        If set to true, the step will wait for an assessment report. Otherwise, the step will finish and the report can be obtained from the console.
+      is_expand: false
+      is_required: false
+      value_options:
+        - "true"
+        - "false"
+
+
   - report_format: "json"
     opts:
       title: "Report Format"
@@ -114,7 +125,7 @@ inputs:
       description: |
         Specifies the format for the assessment report. For more information on SARIF, 
         please see [OASIS Open](https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html).
-      is_expand: true
+      is_expand: false
       is_required: false
       value_options: 
         - "json" 

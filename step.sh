@@ -16,12 +16,13 @@ client_id=${client_id:-}
 secret=${client_secret:-}
 team_name=${team_name:-Default}
 input_file=${file_path:-$1}
+wait_for_report=${wait_for_report:-true}
 report_format=${report_format:-json}
 
 # Optional parameters
 report_location=${ZSCAN_REPORT_LOCATION:-$PWD}
 report_file_name=${ZSCAN_REPORT_FILE_NAME:-}
-wait_interval=${ZSCAN_WAIT:-30}
+wait_interval=${ZSCAN_POLLING_INTERVAL:-30}
 branch_name=${BITRISE_GIT_BRANCH:-}
 build_number=${BITRISE_BUILD_NUMBER:-}
 environment=${ZSCAN_ENVIRONMENT:-}
@@ -178,6 +179,11 @@ if [ "$teamId" == "null" ]; then
   fi  
 fi
 
+# If no need to wait for report, we're done
+if [ "$wait_for_report" != "true" ]; then
+  echo "wait_for_report is not set. We're done!"
+  exit 0
+fi
 
 # Check the Status in a loop - wait for Interval
 # TODO: add timeout
