@@ -18,7 +18,7 @@ For more information on zScan, please see [Continuous Mobile Application Securit
 
 These parameters are mandatory, unless a default value is available as described below.
 
-- **Endpoint**: Zimperium console base URL, e.g., `https://ziap.zimperium.com/`. If your console is hosted on VPC or on-premises, please make sure it is accessible from Bitrise.
+- **Endpoint**: Zimperium console base URL, e.g., `https://ziap.zimperium.com
 - **Client ID** and **Client Secret**: API credentials that can be obtained from the console. You are required to use a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client Secret part. We recommend using a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client ID part as well.
 - **File Path**: the path to the binary, either absolute or relative to the current workspace
 - **Wait for Report**: if set to "true" (default), the script will wait for the assessment report to be complete. Otherwise, the script will exit after uploading the binary to zScan.  The assessment report can be obtained through the console.

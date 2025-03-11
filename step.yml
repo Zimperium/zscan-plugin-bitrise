@@ -70,9 +70,10 @@ inputs:
   - endpoint: https://ziap.zimperium.com
     opts:
       title: "Endpoint"
-      summary: Console base URL.
+      summary: Zimperium Console base URL.
       description: |
-        This is the base URL of your console, e.g., `https://ziap.zimperium.com`.
+        This is the base URL of your Zimperium console, e.g., `https://ziap.zimperium.com`. 
+        See [Documentation](https://github.com/Zimperium/zscan-plugin-bitrise) for more detail.
       is_expand: true
       is_required: true
   
