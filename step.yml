@@ -111,12 +111,11 @@ inputs:
       summary: "Set to true to wait for an assessment report"
       description: |
         If set to true, the step will wait for an assessment report. Otherwise, the step will finish and the report can be obtained from the console.
-      is_expand: false
+      is_expand: true
       is_required: false
       value_options:
         - "true"
         - "false"
-
 
   - report_format: "json"
     opts:
@@ -125,12 +124,12 @@ inputs:
       description: |
         Specifies the format for the assessment report. For more information on SARIF, 
         please see [OASIS Open](https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html).
-      is_expand: false
+      is_expand: true
       is_required: false
       value_options: 
         - "json" 
         - "sarif"
-  
+
   - team_name: Default
     opts:
       title: "Team Name"
