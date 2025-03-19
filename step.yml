@@ -106,6 +106,18 @@ inputs:
       is_expand: true
       is_required: true
 
+  - wait_for_report: "true"
+    opts:
+      title: "Wait for Report"
+      summary: "Set to true to wait for an assessment report"
+      description: |
+        If set to true, the step will wait for an assessment report. Otherwise, the step will finish and the report can be obtained from the console.
+      is_expand: true
+      is_required: false
+      value_options:
+        - "true"
+        - "false"
+
   - report_format: "json"
     opts:
       title: "Report Format"
@@ -118,7 +130,7 @@ inputs:
       value_options: 
         - "json" 
         - "sarif"
-  
+
   - team_name: Default
     opts:
       title: "Team Name"
