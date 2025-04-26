@@ -102,7 +102,7 @@ inputs:
       title: "File Path"
       summary: The path to the binary
       description: |
-        The path to the binary to be uploaded for analysis. This must point to a valid mobile application, e.g., .ipa or .apk file.
+        The path to the binary to be uploaded for analysis. Wildcards are accepted; search is not recursive. This must match at least one, and no more than 5 valid mobile application(s), e.g., .ipa or .apk file(s).
       is_expand: true
       is_required: true
 

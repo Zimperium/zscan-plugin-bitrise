@@ -20,7 +20,7 @@ These parameters are mandatory, unless a default value is available as described
 
 - **Endpoint**: Zimperium console base URL, e.g., `https://ziap.zimperium.com
 - **Client ID** and **Client Secret**: API credentials that can be obtained from the console. You are required to use a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client Secret part. We recommend using a [Bitrise Secret](https://devcenter.bitrise.io/en/builds/secrets.html) for the Client ID part as well.
-- **File Path**: the path to the binary, either absolute or relative to the current workspace
+- **File Path**: the path to the binaries to be uploaded, either absolute or relative to the current workspace. Wildcards are accepted. Folders are not traversed.
 - **Wait for Report**: if set to "true" (default), the script will wait for the assessment report to be complete. Otherwise, the script will exit after uploading the binary to zScan.  The assessment report can be obtained through the console.
 - **Report Format**: the format of the scan report, either 'json' (default) or 'sarif'
 - **Team Name**: name of the team to which this application belongs.  This is required only if submitting the application for the first time; values are ignored if the application already exists in the console and assigned to a team.  If not supplied, the application will be assigned to the 'Default' team.  **Note:** The API key must have additional permissions to be able to manage team assignment: `Common - Teams - Manage` and `zScan Apps - Manage`.
